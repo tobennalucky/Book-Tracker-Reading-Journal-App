@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+<div class="container p-4 view ">
+    <h1 class="myname text-justify my-3">TOBENNA LUCKY</h1>
+    <img class="coverImage" src=<%= coverImage %> alt="<%= book.title %>" width="125px" height="187px" loading="lazy">
+    <h2 class="title"><%= book.title %><span> - BY <%= book.author %> </span></h2>
+    <p class = "list">ISBN: <%= book.isbn %></p>
+    <p class = "list">How strongly I recommend it: <strong><%= book.rating %></strong>/10</p>
+    <p class = "list">Date read: <%= book.date_read %>.</p>
+    <h2 class = "review mt-5">MY REVIEW</h2>
+    <p><%= book.review %></p>
+    <div class="d-flex justify-content-center my-3 gap-3">
+    <a href="/update/<%= bookId %>"><input style="width: 100%;" class="btn btn-success fs-5 btn-lg my-2 button-rad" type="button" value="UPDATE REVIEW"></a>
+    </div>
+</div>
+</hr>
+<div class="container my-3 p-4 ">
+<h2 class = "review mt-5 notes">MY NOTES</h2>
+<a href="/addnote/<%= bookId %>"><input style="width: 30%;" class="btn btn-outline-info fs-5 btn-lg my-2 button-rad" type="button" value="ADD NOTES"></a>
+<div class ="container my-5 mainnotes">
+<% if (notes.length > 0) { %>
+<% notes.forEach(note => { %>
+<p class = "mb-3"><%- note.note.replace(/\n/g, '<br>') %></p>
+<% }) %>
+<% } else { %>
+    <p class = "mb-3">You have not added any notes for this book yet.</p>   
+<% } %>
+</div>
+</div>
+<%- include('partials/footer.ejs') %>

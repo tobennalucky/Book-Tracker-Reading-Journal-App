@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs') %>
+<div id="create-edit min-vh-100" class="my-5">
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+  <h1 class="display-4 fw-bold title">Add Notes</h1>
+  <div class="col-lg-6 mx-auto d-flex flex-column align-items-center">
+    <p class="lead mb-4">Tell us more about the book.</p>
+    <form action="/addnote" method="POST" class="form">
+        <input type="hidden" name="bookId" value="<%= bookId %>">
+        <div class="form-floating mb-3 mt-3 pt-5">
+            <textarea class="form-control text-black" id="note" name="note" placeholder="Your notes on the book can go here" style="height: 500px;" required></textarea>
+            <label for="content">Book Notes:</label>
+        </div>
+        <input class="btn btn-primary btn-lg mt-3 mb-5" type="submit" value="Add Notes">
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

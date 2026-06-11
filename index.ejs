@@ -1,0 +1,49 @@
+<%- include('partials/header.ejs') %>
+<div class = "container d-flex flex-column">
+    <a href = "/about" ><h1 class="text-justify my-3 myname">TOBENNA LUCKY</h1></a>
+    <h1 class="text-justify my-4">BOOKS I'VE READ</h1>
+    <p class="text-justify">Hey Tobenna, here is a list of books you've read and your reviews on them. Click on the book covers to see the notes you made while reading them.<br/>
+    You can also update/add notes of any book from your list by clicking on the respective buttons<br/>
+    Click on the "Add a Book" button to add a new book to your list.</p>
+    <button type="button" class="addbook btn btn-primary me-2" onclick="window.location.href='/add'">Add a book</button> 
+</div>
+<hr/>
+<div class="container">
+<div class="d-flex justify-content-start mb-5">
+  <form action="/" method="GET" class="d-flex">
+    <select name="sort" class="form-select me-2 sort-form" onchange="this.form.submit()">
+      <option value="">Sort by...</option>
+      <option value="recent" <%= sort === 'recent' ? 'selected' : '' %>>Most Recent</option>
+      <option value="rating" <%= sort === 'rating' ? 'selected' : '' %>>Highest Rated</option>
+    </select>
+  </form>
+</div>
+    <% if (books.length > 0) { %>
+    <% books.forEach(book => { %>
+    <div class="book Container my-4 p-4 border rounded-3">
+        <a href="/view/<%= book.id %>"><img class="coverImage" src=<%= book.coverImage %> alt="<%= book.title %>" width="125px" height="187px" loading="lazy"></a>
+        <h2 class="title"><%= book.title %> <span> - BY <%= book.author %> </span></h2>
+        <small>Date read: <%= book.date_read %>. How strongly I recommend it: <strong><%= book.rating %></strong>/10</small>
+        <p><%= book.review %></p>
+        <div class="d-flex justify-content-center my-3 gap-3">
+        <button type="button" class="viewbutton btn btn-warning me-2" onclick="window.location.href='/view/<%= book.id %>'">View Notes</button> 
+        <form action="/delete" method="post">
+            <input type="hidden" name="bookId" value="<%= book.id %>">
+            <input class="btn btn-danger fs-5 btn-lg my-2 button-rad" type="submit" name="delete" value="Delete">
+        </form>
+        </div>         
+    </div>
+    <% })  %>
+    <% } else { %>
+        <div class="book container">
+            <h2>YOU'RE YET TO ADD A BOOK</h2>
+            <p class="text-justify my-4">Click on the "Add a Book" button to add a new book to your list.</p>
+        </div>
+        
+        <% } %>
+</div>
+
+
+
+
+<%- include('partials/footer.ejs') %>

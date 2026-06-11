@@ -1,0 +1,18 @@
+<%- include('partials/header.ejs') %>
+<div id="create-edit min-vh-100" class="my-5">
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+  <h1 class="display-4 fw-bold title">Update your Review</h1>
+  <div class="col-lg-6 mx-auto d-flex flex-column align-items-center">
+    <p class="lead mb-4">What do you think of the Book</p>
+    <form action="/update" method="POST" class="form">
+        <input type="hidden" name="bookId" value="<%= bookId %>">
+        <div class="form-floating mb-3 mt-3 pt-5">
+            <textarea class="form-control text-black" id="review" name="review" placeholder="Your review on the book can go here" style="height: 300px;" required><%= bookReview %></textarea>
+            <label for="content">Book Review:</label>
+        </div>
+        <input class="btn btn-primary btn-lg mt-3 mb-5" type="submit" value="Update Review">
+    </form>
+  </div>
+</div>
+</div>
+<%- include('partials/footer.ejs') %>

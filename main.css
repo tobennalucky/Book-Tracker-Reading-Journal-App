@@ -1,0 +1,151 @@
+p {
+  white-space: pre-line; 
+}
+
+
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+main {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  height: 100%;
+  width: 800px !important;
+  color: white;
+  display: block;
+  unicode-bidi: isolate;
+}
+  
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: black !important;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.book {
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+img {
+  float: left;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+.title {
+  margin-bottom: 10px;
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+span {
+  font-weight: normal;
+}
+
+.myname {
+  margin-bottom: 20px;
+  color: #ffcc00 !important;
+  font-weight: bold !important;
+  font-size: 50px !important;
+}
+small {
+  font-size: 18px;
+  color: #0d6efd;
+}
+a {
+  text-decoration: none !important; /* no underline */
+  color: blue !important; /* keep the link color */
+}
+
+a:hover {
+  text-decoration: underline !important; /* underline only on hover */
+}
+
+.viewbutton {
+  margin-top: 10px !important;
+  height: 46px;
+  width: 170px;
+  font-size: 20px !important;
+  margin-right: 20px !important;
+}
+
+footer {
+  text-align: center;
+  color: white !important;
+  width: 100%;
+}
+
+.addbook {
+  margin-top: 10px !important;
+  height: 46px;
+  width: 150px;
+  font-size: 20px !important;
+  align-self: center;
+}
+
+.form {
+  margin-top: 20px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 800px !important;
+  color:#000 !important;
+}
+
+label {
+  color: white !important;
+  font-size: 20px !important;
+}
+.form-control {
+  font-size: 18px !important;
+  background-color: white !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: grey !important;
+  font-size: 18px !important;
+}
+
+.list {
+  margin-bottom: 0px !important;
+  font-size: 16px !important;
+  color: rgb(184, 183, 183) !important;
+}
+
+.review {
+  color: rgb(41, 186, 9) !important;
+  margin-bottom: 30px !important;
+}
+
+.notes {
+  display: inline-block !important;
+  margin-top: 20px !important;
+  margin-bottom: 10px !important;
+  margin-right: 300px !important;
+}
+
+.mainnotes {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.sort-form {
+ background-color: whitesmoke !important;
+ color: black !important;
+}
